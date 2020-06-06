@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:nubank/pages/home/widgets/card_app.dart';
 import 'package:nubank/pages/home/widgets/my_app_bar.dart';
 import 'package:nubank/pages/home/widgets/my_dots_app.dart';
 import 'package:nubank/pages/home/widgets/page_view_app.dart';
@@ -24,6 +23,10 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     double _screenHeigth = MediaQuery.of(context).size.height;
+   if(_yPosition == null){
+    _yPosition = _screenHeigth *.24;
+
+   }
     return Scaffold(
         backgroundColor: Colors.purple,
         body: Stack(
@@ -32,22 +35,33 @@ class _HomePageState extends State<HomePage> {
             MyAppBar(
               showMenu: _showMenu,
               onTap: () {
-                _showMenu = !_showMenu;
+                setState(() {
+                  _showMenu = !_showMenu;
+                });
               },
             ),
             PageViewApp(
-              top: !_showMenu ? _screenHeigth * .24 : _screenHeigth * .75,
+              top: _yPosition,//!_showMenu ? _screenHeigth * .24 : _screenHeigth * .75,
               onChanged: (index) {
                 setState(() {
                   _currentIndex = index;
                 });
               },
-              onPanUpdate: (detail){
-                _yPosition += detail.delta.dy;
+              onPanUpdate: (detail) {
+                double positionBouttomLimit = _screenHeigth * .75;
+                double positionTopLimit = _screenHeigth * .24;
+
+                setState(() {
+                  
+                  _yPosition += detail.delta.dy;
+                  _yPosition = _yPosition < positionTopLimit ? positionTopLimit :_yPosition; 
+                  _yPosition = _yPosition > positionBouttomLimit ? positionBouttomLimit :_yPosition; 
+
+                });
               },
             ),
             MyDotsApp(
-              top: _screenHeigth * .70,
+              top: _screenHeigth * .20,
               currentIndex: _currentIndex,
             ),
           ],
