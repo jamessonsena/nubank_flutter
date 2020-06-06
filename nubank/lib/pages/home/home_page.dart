@@ -41,9 +41,11 @@ class _HomePageState extends State<HomePage> {
             ),
             PageViewApp(
               top: _yPosition,
+              showMenu: _showMenu,
               onChanged: (index) {
                 setState(() {
                   _currentIndex = index;
+                  
                 });
               },
               onPanUpdate: (detail) {
