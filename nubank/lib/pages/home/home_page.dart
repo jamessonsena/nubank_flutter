@@ -17,7 +17,6 @@ class _HomePageState extends State<HomePage> {
     super.initState();
     _showMenu = false;
     _currentIndex = 0;
-    _yPosition = 0;
   }
 
   @override
