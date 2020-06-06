@@ -23,10 +23,10 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     double _screenHeigth = MediaQuery.of(context).size.height;
     return Scaffold(
-        backgroundColor: Colors.purpleAccent,
+        backgroundColor: Colors.purple,
 
         body: Stack(
-          alignment: Alignment.center,
+          alignment: Alignment.topCenter,
           children: <Widget>[
             MyAppBar(
               showMenu: _showMenu,
@@ -44,8 +44,6 @@ class _HomePageState extends State<HomePage> {
             ),
             Positioned(
               top: _screenHeigth * .70,
-              left: 0,
-              right: 0,
               child: MyDotsApp(
                 currentIndex: _currentIndex,
               )
