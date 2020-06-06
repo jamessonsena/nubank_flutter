@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:nubank/pages/home/widgets/card_app.dart';
 import 'package:nubank/pages/home/widgets/my_app_bar.dart';
+import 'package:nubank/pages/home/widgets/my_dots_app.dart';
+import 'package:nubank/pages/home/widgets/page_view_app.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -8,10 +11,12 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   bool _showMenu;
+  int _currentIndex;
   @override
   void initState() {
     super.initState();
     _showMenu = false;
+    _currentIndex = 0;
   }
 
   @override
@@ -19,7 +24,9 @@ class _HomePageState extends State<HomePage> {
     double _screenHeigth = MediaQuery.of(context).size.height;
     return Scaffold(
         backgroundColor: Colors.purpleAccent,
+
         body: Stack(
+          alignment: Alignment.center,
           children: <Widget>[
             MyAppBar(
               showMenu: _showMenu,
@@ -27,26 +34,21 @@ class _HomePageState extends State<HomePage> {
                 _showMenu = !_showMenu;
               },
             ),
-            Positioned(
+            PageViewApp(
               top: _screenHeigth * .24,
-              height: _screenHeigth * .45,
+              onChanged: (index) {
+                setState(() {
+                  _currentIndex = index;
+                });
+              },
+            ),
+            Positioned(
+              top: _screenHeigth * .70,
               left: 0,
               right: 0,
-              child: PageView(
-                physics: BouncingScrollPhysics(),
-                children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.all(20),
-                    child: Container(
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(30)),
-                    ),
-                  ),
-                  Container(color: Colors.yellow),
-                  Container(color: Colors.blue),
-                ],
-              ),
+              child: MyDotsApp(
+                currentIndex: _currentIndex,
+              )
             ),
           ],
         ));
