@@ -2,6 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
+import 'item_menu.dart';
+
 class MenuApp extends StatelessWidget {
   final double top;
   final bool showMenu;
@@ -32,7 +34,9 @@ class MenuApp extends StatelessWidget {
                 ]),
                 style: TextStyle(fontSize: 12),
               ),
-              SizedBox(height: 5,),
+              SizedBox(
+                height: 5,
+              ),
               Text.rich(
                 TextSpan(text: 'Agência ', children: [
                   TextSpan(
@@ -40,7 +44,9 @@ class MenuApp extends StatelessWidget {
                       style: TextStyle(fontWeight: FontWeight.bold)),
                 ]),
               ),
-              SizedBox(height: 5,),
+              SizedBox(
+                height: 5,
+              ),
               Text.rich(
                 TextSpan(text: 'Conta ', children: [
                   TextSpan(
@@ -49,6 +55,19 @@ class MenuApp extends StatelessWidget {
                 ]),
                 style: TextStyle(fontSize: 12),
               ),
+               SizedBox(
+                height: 25,
+              ),
+              SingleChildScrollView(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 30),
+                  child: Column(
+                    children: <Widget>[
+                      ItemMenu(icon: Icons.info_outline,text:'Me ajuda',),
+                    ],
+                  ),
+                ),
+              )
             ],
           ),
         ),
