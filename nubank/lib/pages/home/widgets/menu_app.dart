@@ -27,11 +27,28 @@ class MenuApp extends StatelessWidget {
               Text.rich(
                 TextSpan(text: 'Banco ', children: [
                   TextSpan(
-                    text: '260 - Nu Pagamentos S.A',
-                    style: TextStyle(fontWeight: FontWeight.bold)
-                  ),
+                      text: '260 - Nu Pagamentos S.A',
+                      style: TextStyle(fontWeight: FontWeight.bold)),
                 ]),
-              )
+                style: TextStyle(fontSize: 12),
+              ),
+              SizedBox(height: 5,),
+              Text.rich(
+                TextSpan(text: 'Agência ', children: [
+                  TextSpan(
+                      text: '0001',
+                      style: TextStyle(fontWeight: FontWeight.bold)),
+                ]),
+              ),
+              SizedBox(height: 5,),
+              Text.rich(
+                TextSpan(text: 'Conta ', children: [
+                  TextSpan(
+                      text: '00000-0',
+                      style: TextStyle(fontWeight: FontWeight.bold)),
+                ]),
+                style: TextStyle(fontSize: 12),
+              ),
             ],
           ),
         ),
