@@ -12,6 +12,7 @@ class MyDotsApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Positioned(
+      top: top,
       child: Row(
         children: <Widget>[
           AnimatedContainer(
