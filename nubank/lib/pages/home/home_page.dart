@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nubank/pages/home/widgets/menu_app.dart';
 import 'package:nubank/pages/home/widgets/my_app_bar.dart';
 import 'package:nubank/pages/home/widgets/my_dots_app.dart';
 import 'package:nubank/pages/home/widgets/page_view_app.dart';
@@ -38,6 +39,10 @@ class _HomePageState extends State<HomePage> {
                   _yPosition = _showMenu ? _screenHeigth * .75 : _screenHeigth * .24;
                 });
               },
+            ),
+            MenuApp(
+              top: _screenHeigth * .24,
+              showMenu: _showMenu,
             ),
             PageViewApp(
               top: _yPosition,
