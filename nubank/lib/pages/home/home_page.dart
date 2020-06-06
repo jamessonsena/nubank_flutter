@@ -77,9 +77,9 @@ class _HomePageState extends State<HomePage> {
 
                   if (_yPosition >= positionBouttomLimit) {
                     //Menu top está ativo ?
-                    _showMenu = false;
-                  } else {
                     _showMenu = true;
+                  } else {
+                    _showMenu = false;
                   }
                 });
               },
@@ -87,6 +87,7 @@ class _HomePageState extends State<HomePage> {
             MyDotsApp(
               top: _screenHeigth * .70,
               currentIndex: _currentIndex,
+              showMenu: _showMenu,
             ),
           ],
         ));
