@@ -24,10 +24,10 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     double _screenHeigth = MediaQuery.of(context).size.height;
     if (_yPosition == null) {
-      _yPosition = _screenHeigth * .24;
+      _yPosition = _screenHeigth * .25;
     }
     return Scaffold(
-        backgroundColor: Colors.purple,
+        backgroundColor: Colors.purple[800],
         body: Stack(
           alignment: Alignment.topCenter,
           children: <Widget>[
@@ -36,12 +36,12 @@ class _HomePageState extends State<HomePage> {
               onTap: () {
                 setState(() {
                   _showMenu = !_showMenu;
-                  _yPosition = _showMenu ? _screenHeigth * .75 : _screenHeigth * .24;
+                  _yPosition = _showMenu ? _screenHeigth * .85 : _screenHeigth * .25;
                 });
               },
             ),
             MenuApp(
-              top: _screenHeigth * .24,
+              top: _screenHeigth * .15,
               showMenu: _showMenu,
             ),
             PageViewApp(
@@ -54,7 +54,7 @@ class _HomePageState extends State<HomePage> {
                 });
               },
               onPanUpdate: (detail) {
-                double positionBouttomLimit = _screenHeigth * .75;
+                double positionBouttomLimit = _screenHeigth * .85;
                 double positionTopLimit = _screenHeigth * .25;
                 double midlePosition = positionBouttomLimit - positionTopLimit;
                 midlePosition = midlePosition / 2;

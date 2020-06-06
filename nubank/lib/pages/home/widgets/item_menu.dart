@@ -16,6 +16,9 @@ class ItemMenu extends StatelessWidget {
         ),
       ),
       child: RaisedButton(
+        color: Colors.purple[800],
+        highlightColor: Colors.transparent,
+        splashColor: Colors.purple[900],
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,//colocando espaco entre os Widget
           children: <Widget>[
