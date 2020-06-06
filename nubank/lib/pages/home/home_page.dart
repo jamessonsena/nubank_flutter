@@ -22,10 +22,9 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     double _screenHeigth = MediaQuery.of(context).size.height;
-   if(_yPosition == null){
-    _yPosition = _screenHeigth *.24;
-
-   }
+    if (_yPosition == null) {
+      _yPosition = _screenHeigth * .24;
+    }
     return Scaffold(
         backgroundColor: Colors.purple,
         body: Stack(
@@ -36,11 +35,12 @@ class _HomePageState extends State<HomePage> {
               onTap: () {
                 setState(() {
                   _showMenu = !_showMenu;
+                  _yPosition = _showMenu ? _screenHeigth * .75 : _screenHeigth * .24;
                 });
               },
             ),
             PageViewApp(
-              top: _yPosition,//!_showMenu ? _screenHeigth * .24 : _screenHeigth * .75,
+              top: _yPosition,
               onChanged: (index) {
                 setState(() {
                   _currentIndex = index;
@@ -48,14 +48,37 @@ class _HomePageState extends State<HomePage> {
               },
               onPanUpdate: (detail) {
                 double positionBouttomLimit = _screenHeigth * .75;
-                double positionTopLimit = _screenHeigth * .24;
-
+                double positionTopLimit = _screenHeigth * .25;
+                double midlePosition = positionBouttomLimit - positionTopLimit;
+                midlePosition = midlePosition / 2;
                 setState(() {
-                  
                   _yPosition += detail.delta.dy;
-                  _yPosition = _yPosition < positionTopLimit ? positionTopLimit :_yPosition; 
-                  _yPosition = _yPosition > positionBouttomLimit ? positionBouttomLimit :_yPosition; 
+                  _yPosition = _yPosition <= positionTopLimit
+                      ? positionTopLimit
+                      : _yPosition;
+                  _yPosition = _yPosition >= positionBouttomLimit
+                      ? positionBouttomLimit
+                      : _yPosition;
 
+                  if (_yPosition != positionBouttomLimit && detail.delta.dy >0) {
+                    _yPosition = _yPosition > positionTopLimit + midlePosition
+                        ? positionBouttomLimit
+                        : _yPosition;
+                  }
+
+
+                  if (_yPosition != positionTopLimit && detail.delta.dy < 0) {
+                    _yPosition = _yPosition < positionBouttomLimit - midlePosition
+                        ? positionTopLimit
+                        : _yPosition;
+                  }
+
+                  if (_yPosition >= positionBouttomLimit) {
+                    //Menu top está ativo ?
+                    _showMenu = false;
+                  } else {
+                    _showMenu = true;
+                  }
                 });
               },
             ),
