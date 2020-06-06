@@ -12,11 +12,13 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   bool _showMenu;
   int _currentIndex;
+  double _yPosition;
   @override
   void initState() {
     super.initState();
     _showMenu = false;
     _currentIndex = 0;
+    _yPosition = 0;
   }
 
   @override
@@ -24,7 +26,6 @@ class _HomePageState extends State<HomePage> {
     double _screenHeigth = MediaQuery.of(context).size.height;
     return Scaffold(
         backgroundColor: Colors.purple,
-
         body: Stack(
           alignment: Alignment.topCenter,
           children: <Widget>[
@@ -35,18 +36,19 @@ class _HomePageState extends State<HomePage> {
               },
             ),
             PageViewApp(
-              top: _screenHeigth * .24,
+              top: !_showMenu ? _screenHeigth * .24 : _screenHeigth * .75,
               onChanged: (index) {
                 setState(() {
                   _currentIndex = index;
                 });
               },
+              onPanUpdate: (detail){
+                _yPosition += detail.delta.dy;
+              },
             ),
-            Positioned(
+            MyDotsApp(
               top: _screenHeigth * .70,
-              child: MyDotsApp(
-                currentIndex: _currentIndex,
-              )
+              currentIndex: _currentIndex,
             ),
           ],
         ));
