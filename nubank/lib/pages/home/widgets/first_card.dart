@@ -14,26 +14,86 @@ class FirstCard extends StatelessWidget {
                 children: <Widget>[
                   Expanded(
                     child: Column(
-                      children: <Widget>[],
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Padding(
+                          padding: const EdgeInsets.all(20),
+                          child: Row(
+                            children: <Widget>[
+                              Icon(
+                                Icons.credit_card,
+                                color: Colors.grey,
+                              ),
+                              SizedBox(
+                                width: 5,
+                              ),
+                              Text(
+                                'Cartão de Crédito',
+                                style:
+                                    TextStyle(color: Colors.grey, fontSize: 13),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(20.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              Text(
+                                'Fatura Atual',
+                                style: TextStyle(
+                                  color: Colors.teal,
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              Text(
+                                'R\$ 600,00',
+                                textAlign: TextAlign.start,
+                                style: TextStyle(
+                                  color: Colors.teal,
+                                  fontSize: 28,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
+                        )
+                      ],
                     ),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(
                         top: 12, bottom: 12, left: 10, right: 15),
-                    child: Container(
-                      width: 7,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Colors.teal,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(10),
+                      child: Container(
+                        width: 7,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Colors.teal,
+                        ),
+                        child: Column(
+                          children: <Widget>[
+                            Expanded(
+                                flex: 3,
+                                child: Container(
+                                  color: Colors.orange,
+                                )),
+                            Expanded(
+                                flex: 3,
+                                child: Container(
+                                  color: Colors.blueGrey,
+                                )),
+                            Expanded(
+                                flex: 3,
+                                child: Container(
+                                  color: Colors.green,
+                                )),
+                          ],
+                        ),
                       ),
-                      child: Column(
-                        children: <Widget>[
-                          Expanded(flex:3,child: Container(color: Colors.orange,)),
-                          Expanded(flex:3,child: Container(color: Colors.blueGrey,)),
-                          Expanded(flex:3,child: Container(color: Colors.green,)),
-
-                        ],
-                      ) ,
                     ),
                   ),
                 ],
