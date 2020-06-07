@@ -103,6 +103,7 @@ class _HomePageState extends State<HomePage> {
                 height: 100,
                 color: Colors.red,
                 child: ListView(
+                  scrollDirection: Axis.horizontal,// muito top esse elemento, trocando a direção da listview 
                  children: <Widget>[
                    Container(
                      width: 50,
