@@ -12,7 +12,7 @@ class ItemMenuBottom extends StatelessWidget {
       child: Container(
         width: 70,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(5), 
+          borderRadius: BorderRadius.circular(10), 
           color: Colors.white24,
         ),
         child: Padding(
