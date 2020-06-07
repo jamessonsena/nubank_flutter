@@ -6,8 +6,9 @@ class SecontCard extends StatefulWidget {
   _SecontCardState createState() => _SecontCardState();
 }
 
-class _SecontCardState extends State<SecontCard> with AutomaticKeepAliveClientMixin {
-      bool showSaldo = false;
+class _SecontCardState extends State<SecontCard>
+    with AutomaticKeepAliveClientMixin {
+  bool showSaldo = false;
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
@@ -43,18 +44,19 @@ class _SecontCardState extends State<SecontCard> with AutomaticKeepAliveClientMi
                           ],
                         ),
                         GestureDetector(
-                            onTap: () {
-                              setState(() {
-                                showSaldo = !showSaldo;
-                              });
-                            },
-                            child: SvgPicture.asset(
-                              !showSaldo
-                                  ? 'assets/icons/eye-off-outline.svg'
-                                  : 'assets/icons/eye-outline.svg',
-                              color: Colors.grey,
-                              semanticsLabel: 'eye',
-                            ))
+                          onTap: () {
+                            setState(() {
+                              showSaldo = !showSaldo;
+                            });
+                          },
+                          child: SvgPicture.asset(
+                            !showSaldo
+                                ? 'assets/icons/eye-off-outline.svg'
+                                : 'assets/icons/eye-outline.svg',
+                            color: Colors.grey,
+                            semanticsLabel: 'eye',
+                          ),
+                        ),
                       ],
                     ),
                   ),
@@ -70,22 +72,22 @@ class _SecontCardState extends State<SecontCard> with AutomaticKeepAliveClientMi
                             fontSize: 13,
                           ),
                         ),
-                        showSaldo ? Text.rich(
-                          TextSpan(
-                            text: 'R\$ 232,32',
-                          ),
-                          textAlign: TextAlign.start,
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 28,
-                          ),
-                        )
-                        :
-                        Container(
-                          height: 32,
-                          width: 160,
-                          color: Colors.grey,
-                        ),
+                        showSaldo
+                            ? Text.rich(
+                                TextSpan(
+                                  text: 'R\$ 232,32',
+                                ),
+                                textAlign: TextAlign.start,
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 28,
+                                ),
+                              )
+                            : Container(
+                                height: 32,
+                                width: 160,
+                                color: Colors.grey,
+                              ),
                       ],
                     ),
                   ),

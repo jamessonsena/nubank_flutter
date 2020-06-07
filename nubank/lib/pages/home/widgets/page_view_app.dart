@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nubank/pages/home/widgets/first_card.dart';
 import 'package:nubank/pages/home/widgets/secont_card.dart';
+import 'package:nubank/pages/home/widgets/thirdCard.dart';
 
 import 'card_app.dart';
 
@@ -28,7 +29,7 @@ class PageViewApp extends StatelessWidget {
           children: <Widget>[
             CardApp(child: FirstCard(),),
             CardApp(child: SecontCard(),),
-            CardApp(child: FirstCard(),),
+            CardApp(child: ThirdCard(),),
           ],
         ),
       ),
