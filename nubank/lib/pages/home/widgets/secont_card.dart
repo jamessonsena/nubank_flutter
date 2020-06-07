@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
-class SecontCard extends StatelessWidget {
+class SecontCard extends StatefulWidget {
+  @override
+  _SecontCardState createState() => _SecontCardState();
+}
+
+class _SecontCardState extends State<SecontCard> {
+      bool showSaldo = false;
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
@@ -35,8 +42,19 @@ class SecontCard extends StatelessWidget {
                             ),
                           ],
                         ),
-                        Icon(Icons.remove_red_eye,
-                        color: Colors.grey,)
+                        GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                showSaldo = !showSaldo;
+                              });
+                            },
+                            child: SvgPicture.asset(
+                              !showSaldo
+                                  ? 'assets/icons/eye-off-outline.svg'
+                                  : 'assets/icons/eye-outline.svg',
+                              color: Colors.grey,
+                              semanticsLabel: 'eye',
+                            ))
                       ],
                     ),
                   ),
@@ -46,46 +64,27 @@ class SecontCard extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Text(
-                          'Fatura Atual',
+                          'Saldo disponivel',
                           style: TextStyle(
-                            color: Colors.teal,
+                            color: Colors.grey,
                             fontSize: 13,
-                            fontWeight: FontWeight.bold,
                           ),
                         ),
-                        Text.rich(
-                          TextSpan(text: 'R\$ ', children: [
-                            TextSpan(
-                              text: '600',
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            TextSpan(
-                              text: ',50',
-                            ),
-                          ]),
-                          textAlign: TextAlign.start,
-                          style: TextStyle(
-                            color: Colors.teal,
-                            fontSize: 28,
+                        showSaldo ? Text.rich(
+                          TextSpan(
+                            text: 'R\$ 232,32',
                           ),
-                        ),
-                        Text.rich(
-                          TextSpan(text: 'Limite disponível ', children: [
-                            TextSpan(
-                              text: 'R\$ 2.200.32',
-                              style: TextStyle(
-                                color: Colors.green,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ]),
                           textAlign: TextAlign.start,
                           style: TextStyle(
                             color: Colors.black,
-                            fontSize: 12,
+                            fontSize: 28,
                           ),
+                        )
+                        :
+                        Container(
+                          height: 32,
+                          width: 160,
+                          color: Colors.grey,
                         ),
                       ],
                     ),
@@ -106,7 +105,7 @@ class SecontCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   Icon(
-                    Icons.shopping_cart,
+                    Icons.credit_card,
                     color: Colors.grey,
                   ),
                   SizedBox(
@@ -114,7 +113,7 @@ class SecontCard extends StatelessWidget {
                   ),
                   Flexible(
                     child: Text(
-                      'Compra mais recente em MercPago no valor de R\$123,..',
+                      'Compra mais recente em MercPago no valor de R\$43,00',
                       style: TextStyle(color: Colors.black, fontSize: 13),
                     ),
                   ),
