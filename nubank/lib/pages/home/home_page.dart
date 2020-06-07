@@ -94,6 +94,25 @@ class _HomePageState extends State<HomePage> {
               currentIndex: _currentIndex,
               showMenu: _showMenu,
             ),
+            Positioned(
+              bottom: 0,
+              left: 0,
+              right: 0,
+              height: _screenHeigth * .15,
+              child: Container(
+                height: 100,
+                color: Colors.red,
+                child: ListView(
+                 children: <Widget>[
+                   Container(
+                     width: 50,
+                    height: 50,
+                    color: Colors.blue,
+                   )
+                 ], 
+                ),
+              ),
+            )
           ],
         ));
   }

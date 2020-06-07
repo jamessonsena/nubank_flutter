@@ -22,7 +22,7 @@ class MenuApp extends StatelessWidget {
           child: Column(
             children: <Widget>[
               Image.network(
-                'https://lh3.googleusercontent.com/proxy/CMoxY0q_4Iz_WZok3KfiWl0mZas_vzu673K2TQHBH9p6GyF5jW76rqUdiDsXjBRe-z9cjvjy7XQFMDVvf8sV81CtIUKcJ2l6_4XiWYqGyOzrHizb-tD6SDVehBc8',
+                'https://pngimg.com/uploads/qr_code/qr_code_PNG6.png',
                 height: 120,
                 color: Colors.white,
               ),
@@ -87,12 +87,14 @@ class MenuApp extends StatelessWidget {
                         icon: Icons.phone_android,
                         text: 'Configuração do app',
                       ),
-                      SizedBox(height: 25,),
+                      SizedBox(
+                        height: 25,
+                      ),
                       Container(
                         height: 35,
                         width: double.infinity,
                         decoration: BoxDecoration(
-                          border:Border.all(width: 0.7,color: Colors.white54),
+                          border: Border.all(width: 0.7, color: Colors.white54),
                         ),
                         child: RaisedButton(
                           color: Colors.purple[800],
@@ -101,8 +103,7 @@ class MenuApp extends StatelessWidget {
                           elevation: 0,
                           disabledElevation: 0,
                           child: Row(
-                            mainAxisAlignment: MainAxisAlignment
-                                .spaceBetween, //colocando espaco entre os Widget
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween, //colocando espaco entre os Widget
                             children: <Widget>[
                               Text(
                                 'Sair do app',
