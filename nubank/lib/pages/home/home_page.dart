@@ -36,7 +36,8 @@ class _HomePageState extends State<HomePage> {
               onTap: () {
                 setState(() {
                   _showMenu = !_showMenu;
-                  _yPosition = _showMenu ? _screenHeigth * .85 : _screenHeigth * .25;
+                  _yPosition =
+                      _showMenu ? _screenHeigth * .85 : _screenHeigth * .25;
                 });
               },
             ),
@@ -50,7 +51,6 @@ class _HomePageState extends State<HomePage> {
               onChanged: (index) {
                 setState(() {
                   _currentIndex = index;
-                  
                 });
               },
               onPanUpdate: (detail) {
@@ -67,17 +67,18 @@ class _HomePageState extends State<HomePage> {
                       ? positionBouttomLimit
                       : _yPosition;
 
-                  if (_yPosition != positionBouttomLimit && detail.delta.dy >0) {
+                  if (_yPosition != positionBouttomLimit &&
+                      detail.delta.dy > 0) {
                     _yPosition = _yPosition > positionTopLimit + midlePosition
                         ? positionBouttomLimit
                         : _yPosition;
                   }
 
-
                   if (_yPosition != positionTopLimit && detail.delta.dy < 0) {
-                    _yPosition = _yPosition < positionBouttomLimit - midlePosition
-                        ? positionTopLimit
-                        : _yPosition;
+                    _yPosition =
+                        _yPosition < positionBouttomLimit - midlePosition
+                            ? positionTopLimit
+                            : _yPosition;
                   }
 
                   if (_yPosition >= positionBouttomLimit) {
@@ -98,19 +99,56 @@ class _HomePageState extends State<HomePage> {
               bottom: 0,
               left: 0,
               right: 0,
-              height: _screenHeigth * .15,
+              height: _screenHeigth * .13,
               child: Container(
-                height: 100,
-                color: Colors.red,
                 child: ListView(
-                  scrollDirection: Axis.horizontal,// muito top esse elemento, trocando a direção da listview 
-                 children: <Widget>[
-                   Container(
-                     width: 50,
-                    height: 50,
-                    color: Colors.blue,
-                   )
-                 ], 
+                  physics: BouncingScrollPhysics(), //Efeito de elastico
+                  scrollDirection: Axis
+                      .horizontal, // muito top esse elemento, trocando a direção da listview
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 10, vertical: 12),
+                      child: Container(
+                        width: 70,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5),
+                          color: Colors.white24,
+                        ),
+                        ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 10, vertical: 12),
+                      child: Container(
+                        width: 70,
+                        color: Colors.blue,
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 10, vertical: 12),
+                      child: Container(
+                        width: 70,
+                        color: Colors.blue,
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 10, vertical: 12),
+                      child: Container(
+                        width: 70,
+                        color: Colors.blue,
+                      ),
+                    ), Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 10, vertical: 12),
+                      child: Container(
+                        width: 70,
+                        color: Colors.blue,
+                      ),
+                    ),
+                  ],
                 ),
               ),
             )
