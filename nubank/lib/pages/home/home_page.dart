@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nubank/pages/home/widgets/item_menu_bottom.dart';
 import 'package:nubank/pages/home/widgets/menu_app.dart';
 import 'package:nubank/pages/home/widgets/my_app_bar.dart';
 import 'package:nubank/pages/home/widgets/my_dots_app.dart';
@@ -106,48 +107,11 @@ class _HomePageState extends State<HomePage> {
                   scrollDirection: Axis
                       .horizontal, // muito top esse elemento, trocando a direção da listview
                   children: <Widget>[
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 10, vertical: 12),
-                      child: Container(
-                        width: 70,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5),
-                          color: Colors.white24,
-                        ),
-                        ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 10, vertical: 12),
-                      child: Container(
-                        width: 70,
-                        color: Colors.blue,
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 10, vertical: 12),
-                      child: Container(
-                        width: 70,
-                        color: Colors.blue,
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 10, vertical: 12),
-                      child: Container(
-                        width: 70,
-                        color: Colors.blue,
-                      ),
-                    ), Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 10, vertical: 12),
-                      child: Container(
-                        width: 70,
-                        color: Colors.blue,
-                      ),
-                    ),
+                    ItemMenuBottom(),
+                    ItemMenuBottom(),
+                    ItemMenuBottom(),
+                    ItemMenuBottom(),
+                    ItemMenuBottom(),
                   ],
                 ),
               ),
