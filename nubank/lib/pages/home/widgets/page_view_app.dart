@@ -11,7 +11,6 @@ class PageViewApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(showMenu);
     return AnimatedPositioned(
       duration: Duration(milliseconds: 300),
       top: top,

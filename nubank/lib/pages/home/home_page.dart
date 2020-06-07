@@ -99,6 +99,8 @@ class _HomePageState extends State<HomePage> {
             AnimatedPositioned(
               duration: Duration(milliseconds: 200),
               bottom: 0,
+              left: 0,
+              right: 0, 
               height: _screenHeigth * .13,
               child: AnimatedOpacity(
                 duration: Duration(milliseconds: 200),

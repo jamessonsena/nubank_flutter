@@ -12,7 +12,7 @@ class ItemMenuBottom extends StatelessWidget {
       child: Container(
         width: 70,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(5),
+          borderRadius: BorderRadius.circular(5), 
           color: Colors.white24,
         ),
         child: Column(
@@ -20,7 +20,7 @@ class ItemMenuBottom extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Icon(icon),
-            Text(text, style: TextStyle(fontSize: 10),),
+            Text(text, style: TextStyle(fontSize: 12),),
           ],
         ),
       ),
