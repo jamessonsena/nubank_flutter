@@ -48,13 +48,22 @@ class FirstCard extends StatelessWidget {
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
-                              Text(
-                                'R\$ 600,00',
+                              Text.rich(
+                                TextSpan(text: 'R\$ ', children: [
+                                  TextSpan(
+                                    text: '600',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  TextSpan(
+                                    text: ',50',
+                                  ),
+                                ]),
                                 textAlign: TextAlign.start,
                                 style: TextStyle(
                                   color: Colors.teal,
                                   fontSize: 28,
-                                  fontWeight: FontWeight.bold,
                                 ),
                               ),
                             ],
