@@ -66,6 +66,22 @@ class FirstCard extends StatelessWidget {
                                   fontSize: 28,
                                 ),
                               ),
+                              Text.rich(
+                                TextSpan(text: 'Limite disponível ', children: [
+                                  TextSpan(
+                                    text: 'R\$ 2.200.32',
+                                    style: TextStyle(
+                                      color: Colors.green,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ]),
+                                textAlign: TextAlign.start,
+                                style: TextStyle(
+                                  color: Colors.grey,
+                                  fontSize: 12,
+                                ),
+                              ),
                             ],
                           ),
                         )
@@ -112,6 +128,26 @@ class FirstCard extends StatelessWidget {
           Expanded(
               child: Container(
             color: Colors.grey[200],
+            child: Padding(
+              padding: const EdgeInsets.all(10),
+              child: Row(
+                children: <Widget>[
+                  Icon(
+                    Icons.shopping_cart,
+                    color: Colors.grey,
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Flexible(
+                    child: Text(
+                      'Compra mais recente em MercPago no valor de R\$123,..',
+                      style: TextStyle(color: Colors.grey, fontSize: 13),
+                    ),
+                  ),
+                ],
+              ),
+            ),
           )),
         ],
       ),
