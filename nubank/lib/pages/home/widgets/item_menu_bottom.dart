@@ -15,13 +15,16 @@ class ItemMenuBottom extends StatelessWidget {
           borderRadius: BorderRadius.circular(5), 
           color: Colors.white24,
         ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,//colocando espaço entre os itens
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Icon(icon),
-            Text(text, style: TextStyle(fontSize: 12),),
-          ],
+        child: Padding(
+          padding: const EdgeInsets.all(7.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,//colocando espaço entre os itens
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Icon(icon),
+              Text(text, style: TextStyle(fontSize: 10),),
+            ],
+          ),
         ),
       ),
     );
