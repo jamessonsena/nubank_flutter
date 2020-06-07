@@ -47,7 +47,6 @@ class _HomePageState extends State<HomePage> {
               top: _screenHeigth * .15,
               showMenu: _showMenu,
             ),
-            BottomMenu(showMenu: _showMenu,),
             PageViewApp(
               top: _yPosition,
               showMenu: _showMenu,
@@ -97,6 +96,7 @@ class _HomePageState extends State<HomePage> {
               currentIndex: _currentIndex,
               showMenu: _showMenu,
             ),
+          //BottomMenu(showMenu: _showMenu,),
           ],
         ));
   }

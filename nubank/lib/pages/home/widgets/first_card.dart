@@ -15,6 +15,7 @@ class FirstCard extends StatelessWidget {
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
                         Padding(
                           padding: const EdgeInsets.all(20),
@@ -78,13 +79,16 @@ class FirstCard extends StatelessWidget {
                                 ]),
                                 textAlign: TextAlign.start,
                                 style: TextStyle(
-                                  color: Colors.grey,
+                                  color: Colors.black,
                                   fontSize: 12,
                                 ),
                               ),
                             ],
                           ),
-                        )
+                        ),
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height * .04,
+                        ),
                       ],
                     ),
                   ),
@@ -131,6 +135,7 @@ class FirstCard extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(10),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   Icon(
                     Icons.shopping_cart,
@@ -142,8 +147,13 @@ class FirstCard extends StatelessWidget {
                   Flexible(
                     child: Text(
                       'Compra mais recente em MercPago no valor de R\$123,..',
-                      style: TextStyle(color: Colors.grey, fontSize: 13),
+                      style: TextStyle(color: Colors.black, fontSize: 13),
                     ),
+                  ),
+                  Icon(
+                    Icons.chevron_right,
+                    color: Colors.grey[400],
+                    size: 18,
                   ),
                 ],
               ),

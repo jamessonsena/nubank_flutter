@@ -109,7 +109,7 @@ class MenuApp extends StatelessWidget {
                               children: <Widget>[
                                 Text(
                                   'Sair do app',
-                                  style: TextStyle(fontSize: 12),
+                                  style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
                                 ),
                               ],
                             ),
