@@ -40,11 +40,11 @@ class _PageViewAppState extends State<PageViewApp> {
   Widget build(BuildContext context) {
     return TweenAnimationBuilder<double>(
         tween: _tween,
-        duration: Duration(milliseconds: 600),
+        duration: Duration(milliseconds: 300),
         curve: Curves.bounceInOut,
         builder: (context, value, child) {
           return AnimatedPositioned(
-            duration: Duration(milliseconds: 600),
+            duration: Duration(milliseconds: 300),
             top: widget.top,
             curve: Curves.easeOut,
             height: MediaQuery.of(context).size.height * .45,

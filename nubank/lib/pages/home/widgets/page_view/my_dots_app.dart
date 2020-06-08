@@ -15,12 +15,12 @@ class MyDotsApp extends StatelessWidget {
     return Positioned(
       top: top,
       child: AnimatedOpacity(
-        duration: Duration(milliseconds: 200),
+        duration: Duration(milliseconds: 300),
         opacity: showMenu?0:1,
               child: Row(
           children: <Widget>[
             AnimatedContainer(
-              duration: Duration(milliseconds: 400),
+              duration: Duration(milliseconds: 300),
               height: 7,
               width: 7,
               decoration:

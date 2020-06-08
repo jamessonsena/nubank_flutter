@@ -32,14 +32,14 @@ class _BottomMenuState extends State<BottomMenu> {
   Widget build(BuildContext context) {
    return TweenAnimationBuilder<double>(
         tween: _tween,
-        duration: Duration(milliseconds: 600),
+        duration: Duration(milliseconds: 300),
         curve: Curves.bounceInOut,
         builder: (context, value, child) {
           return AnimatedPositioned(
-          duration: Duration(milliseconds: 200),
+          duration: Duration(milliseconds: 300),
           bottom: 0,
-          left: 0,
-          right: 0,
+          left: value,
+          right: value * -1,
           height: MediaQuery.of(context).size.height * .14,
           child: IgnorePointer(
             ignoring: widget.showMenu,
