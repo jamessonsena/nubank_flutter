@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:nubank/pages/home/widgets/bottom_menu.dart';
-import 'package:nubank/pages/home/widgets/menu_app.dart';
+import 'package:nubank/pages/home/widgets/bottom_menu/bottom_menu.dart';
+import 'package:nubank/pages/home/widgets/menu/menu_app.dart';
 import 'package:nubank/pages/home/widgets/my_app_bar.dart';
-import 'package:nubank/pages/home/widgets/my_dots_app.dart';
-import 'package:nubank/pages/home/widgets/page_view_app.dart';
+import 'package:nubank/pages/home/widgets/page_view/my_dots_app.dart';
+import 'package:nubank/pages/home/widgets/page_view/page_view_app.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -85,8 +85,7 @@ class _HomePageState extends State<HomePage> {
                   if (_yPosition >= positionBouttomLimit) {
                     //Menu top está ativo ?
                     _showMenu = true;
-                  } else {
-                   }
+                  } else {}
                 });
               },
             ),
@@ -95,7 +94,9 @@ class _HomePageState extends State<HomePage> {
               currentIndex: _currentIndex,
               showMenu: _showMenu,
             ),
-          BottomMenu(showMenu: _showMenu,),
+            BottomMenu(
+              showMenu: _showMenu,
+            ),
           ],
         ));
   }
