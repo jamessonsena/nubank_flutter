@@ -16,7 +16,7 @@ class _BottomMenuState extends State<BottomMenu> {
   @override
   void initState() {
     super.initState();
-    _tween = Tween<double>(begin: 150.0, end: 150);
+    _tween = Tween<double>(begin: 150.0, end: 0.0);
   }
 
 
