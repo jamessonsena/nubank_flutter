@@ -25,15 +25,6 @@ class _PageViewAppState extends State<PageViewApp> {
   void initState() {
     super.initState();
     _tween = Tween<double>(begin: 150.0, end: 150);
-    delayAnimation();
-  }
-
-  Future<void> delayAnimation() async {
-    await Future.delayed(Duration(seconds: 1), () {
-      setState(() {
-        _tween = Tween<double>(begin: 150.0, end: 0);
-      });
-    });
   }
 
   @override

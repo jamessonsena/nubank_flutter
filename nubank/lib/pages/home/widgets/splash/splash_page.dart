@@ -8,12 +8,12 @@ class SplashPage extends StatefulWidget {
 
 class _SplashPageState extends State<SplashPage> {
 
-  Future<void> delay() {
-    Future.delayed(Duration(seconds: 2), () {
+  Future<void> delay() async{
+    return await Future.delayed(Duration(seconds: 2), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(
-          builder: (context) {
+        PageRouteBuilder(
+          pageBuilder: (context, animated, segAnimated) {
             return HomePage();
           },
         ),
