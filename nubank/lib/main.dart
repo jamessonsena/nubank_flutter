@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:nubank/pages/home/home_page.dart';
+import 'package:nubank/pages/home/widgets/splash/splash_page.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(
     SystemUiOverlayStyle(
-      statusBarBrightness: Brightness.dark
+      statusBarBrightness: Brightness.dark,
+      statusBarColor: Colors.transparent
     )
   );
     
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.purple,
         brightness: Brightness.dark
       ),
-      home: HomePage(),
+      home: SplashPage(),
     );
   }
 }
