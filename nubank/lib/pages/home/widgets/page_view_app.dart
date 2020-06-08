@@ -14,25 +14,32 @@ class PageViewApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AnimatedPositioned(
-      duration: Duration(milliseconds: 300),
-      top: top,
-      curve: Curves.easeOut,
-      height: MediaQuery.of(context).size.height * .45,
-      left: 0,
-      right: 0,
-      child: GestureDetector(
-        onPanUpdate: onPanUpdate, //evento de clicar no item e mover
-        child: PageView(
-          onPageChanged: onChanged,
-          physics: showMenu ? NeverScrollableScrollPhysics() :BouncingScrollPhysics(),
-          children: <Widget>[
-            CardApp(child: FirstCard(),),
-            CardApp(child: SecontCard(),),
-            CardApp(child: ThirdCard(),),
-          ],
-        ),
-      ),
+    return TweenAnimationBuilder<double>(
+      tween:Tween<double>(begin: 80.0, end: 0),
+      duration: Duration(milliseconds: 600),
+      curve: Curves.bounceInOut,
+      builder: (context, value, child) {
+        return AnimatedPositioned(
+          duration: Duration(milliseconds: 600),
+          top: top,
+          curve: Curves.easeOut,
+          height: MediaQuery.of(context).size.height * .45,
+          left: value,
+          right: value *-1,
+          child: GestureDetector(
+            onPanUpdate: onPanUpdate, //evento de clicar no item e mover
+            child: PageView(
+              onPageChanged: onChanged,
+              physics: showMenu ? NeverScrollableScrollPhysics() :BouncingScrollPhysics(),
+              children: <Widget>[
+                CardApp(child: FirstCard(),),
+                CardApp(child: SecontCard(),),
+                CardApp(child: ThirdCard(),),
+              ],
+            ),
+          ),
+        );
+      }
     );
   }
 }
