@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-class ThirdCard extends StatelessWidget {
+class ThirdCard extends StatefulWidget {
+  @override
+  _ThirdCardState createState() => _ThirdCardState();
+}
+
+class _ThirdCardState extends State<ThirdCard> {
+  bool _buttonPressed = false;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -23,7 +29,9 @@ class ThirdCard extends StatelessWidget {
                     fontSize: 26,
                     fontWeight: FontWeight.bold),
               ),
-              SizedBox(height:15,),
+              SizedBox(
+                height: 15,
+              ),
               Text(
                 'Acule pontos que nunca expiram e troque por passagens aéreas ou serviços personalizados',
                 style: TextStyle(color: Colors.grey[700]),
@@ -40,6 +48,11 @@ class ThirdCard extends StatelessWidget {
               ),
             ),
             child: RaisedButton(
+              onHighlightChanged: (pressed) {
+                setState(() {
+                  _buttonPressed = pressed;
+                });
+              },
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(5),
               ),
@@ -50,9 +63,12 @@ class ThirdCard extends StatelessWidget {
               highlightElevation: 0,
               hoverElevation: 0,
               onPressed: () {},
-              textColor: Colors.purple[800],
-              highlightColor: Colors.purple[800] ,
-              child: Text('ATIVE O SEU REWARDS', style: TextStyle(fontWeight: FontWeight.bold),),
+              textColor: !_buttonPressed ? Colors.purple[800] : Colors.white,
+              highlightColor: Colors.purple[800],
+              child: Text(
+                'ATIVE O SEU REWARDS',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
             ),
           ),
         ],
